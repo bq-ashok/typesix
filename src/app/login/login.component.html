@@ -43,3 +43,9 @@
       </div>
   </div>
 </div>
+
+<div *ngFor="let hero of datas; let index = index">
+    <app-user [data]="hero" [index]="index"> </app-user>
+    <!-- <li> {{hero.name}}</li> -->
+
+</div>

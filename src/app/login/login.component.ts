@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 
 
@@ -12,11 +12,19 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
   invalidLogin: boolean = false;
   model: object = {};
-  constructor(private router: Router) { }
+  datas:  object  = [];
+  constructor(private router: Router) {
+    this.datas = [
+      { "name":"John", "age":30, "car":null },
+      { "name":"ashok", "age":30, "car":null },
+      { "name":"kumar", "age":20, "car":"bmw" }
+    ];
+   }
 
   onSubmit(f) {
     this.submitted = true;
-    console.log(JSON.stringify(this.model), this.model);
+    console.log(JSON.stringify(this.model), this.datas);
+    this.router.navigate(['user'], { state: this.datas});
     // if (this.loginForm.invalid) {
     //   return;
     // }
