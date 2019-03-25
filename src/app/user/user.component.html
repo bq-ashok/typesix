@@ -1,3 +1,25 @@
 <p *ngIf="data">
- {{index}}. user works! {{data.name}} : {{data.age >= 30 ? data.age : 'false'}} : {{data.car}}
+    {{index}}. user works! {{data.name}} : {{data.age >= 30 ? data.age : 'false'}} : {{data.car}}
 </p>
+
+<button (click)="modalOpen()" appMouseEvent highlightColor="green"  class="btn btn-info">Success</button>
+
+<div *ngIf="response">
+    <table style="width:100%">
+        <tr [ngClass]="{'first' : status}">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+        <tr appMouseEvent highlightColor="yellow" defaultColor="gray" *ngFor="let res of response; let index = index; let isAdd=odd; let isEven=even" [class.odd]="isAdd" [class.even]="isEven">
+            <td  > {{ res.login }} </td>
+            <td> {{ res.id }} </td>
+            <td> {{ index }} </td>
+            <td> {{ res.events_url }} </td>
+            <td> {{ res.node_id }} </td>
+        </tr>
+    </table>
+
+</div>
