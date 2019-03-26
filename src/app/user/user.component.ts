@@ -1,9 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import {ActivatedRoute,  Router, RouterStateSnapshot} from '@angular/router';
 import { UserService } from '../services/user.service';
-import { getLocalePluralCase } from '@angular/common';
-import { filter } from 'rxjs/operators';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+import {SharedServiceService } from '../services/shared-service.service';
 
 @Component({
   selector: 'app-user',
@@ -25,6 +23,12 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+      //shared services 
+    this.sharedService.currentMessage.subscribe(message => {
+      this.message = message;
+      console.log(message);  
+    });
+    this.sharedService.changeMessage("after changes default message")  
 
   }
 
