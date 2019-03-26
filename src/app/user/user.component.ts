@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   @Input() index: number;
   private status : boolean;
   public response: Array<object>;
-  constructor(private router: ActivatedRoute, private userService: UserService) {
+  constructor(private router: ActivatedRoute, private userService: UserService, private sharedService: SharedServiceService) {
     this.router.queryParams.subscribe(params => {
 
       console.log('params', params.page);
