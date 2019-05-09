@@ -16,7 +16,6 @@ export class MouseEventDirective {
 
   @HostListener('mouseleave') onMouseLeave() {
     this.highLight(null);
-
   }
   private highLight(color) {
     this.el.nativeElement.style.backgroundColor= color;

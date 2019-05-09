@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Router} from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
@@ -32,6 +33,10 @@ export class LoginComponent implements OnInit {
 
   changedExtraHandler(changes) {
     console.log(changes);
+}
+
+ngDoCheck() {
+  console.log('ng do check called');
 }
 
 }

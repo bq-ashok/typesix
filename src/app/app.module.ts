@@ -11,7 +11,7 @@ import { UserComponent } from './user/user.component';
 import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 import {UserService } from './services/user.service';
 
-import { MouseEventDirective } from './directives/mouse-event.directive';
+import { MouseEventDirective } from './Directives/mouse-event.directive';
 
 @NgModule({
   declarations: [

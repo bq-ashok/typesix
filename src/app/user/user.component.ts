@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {
       //shared services 
     this.sharedService.currentMessage.subscribe(message => {
-      this.message = message;
+      // this.message = message;
       console.log(message);  
     });
     this.sharedService.changeMessage("after changes default message")  
