@@ -12,6 +12,18 @@
                           <div *ngIf="firstName.errors.required">First Name is required</div>
                       </div>
                   </div>
+
+
+                  <div class="form-group">
+                    <label for="power">Hero Power</label>
+                    <select class="form-control"  id="power" required [(ngModel)]="model.power" name="power" #power="ngModel">
+                      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+                    </select>
+                    <div *ngIf="f.submitted && power.invalid" class="invalid-feedback">
+                        <div *ngIf="power.errors.required">select any options</div>
+                        <!-- <div *ngIf="power.invalid">  Profile required. </div>  -->
+                     </div>
+                  </div>
                   <!-- <div class="form-group">
                       <label for="lastName">Last Name</label>
                       <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />

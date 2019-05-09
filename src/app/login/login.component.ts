@@ -14,12 +14,16 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
   model: object = {};
   datas: object  = [];
+  power : any;
+  powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
   constructor(private router: Router) {
     this.datas = [
       { name: 'John', age: 30, car: null },
       { name: 'ashok', age: 30, car: null },
       { name: 'kumar', age: 20, car: 'bmw' }
     ];
+    // this.power = 'Super Hot' ;
    }
 
   onSubmit(f) {
