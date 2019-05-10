@@ -1,11 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
@@ -23,8 +22,8 @@ export class LoginComponent implements OnInit {
       { name: 'ashok', age: 30, car: null },
       { name: 'kumar', age: 20, car: 'bmw' }
     ];
-    // this.power = 'Super Hot' ;
    }
+   
 
   onSubmit(f) {
     this.submitted = true;
@@ -32,15 +31,13 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['user'], { queryParams: { page: '55525' }} );
   }
   ngOnInit() {
+    this.model['power'] = 'Super Hot';
     console.log('init methods get called');
+   
   }
 
   changedExtraHandler(changes) {
     console.log(changes);
-}
-
-ngDoCheck() {
-  console.log('ng do check called');
 }
 
 }
