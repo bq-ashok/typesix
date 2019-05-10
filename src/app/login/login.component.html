@@ -13,10 +13,9 @@
                       </div>
                   </div>
 
-
                   <div class="form-group">
                     <label for="power">Hero Power</label>
-                    <select class="form-control"  id="power" required [(ngModel)]="model.power" name="power" #power="ngModel">
+                    <select class="form-control"  id="power" required [(ngModel)]="model.power" name="power" #power="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" >
                       <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
                     </select>
                     <div *ngIf="f.submitted && power.invalid" class="invalid-feedback">
@@ -24,21 +23,29 @@
                         <!-- <div *ngIf="power.invalid">  Profile required. </div>  -->
                      </div>
                   </div>
-                  <!-- <div class="form-group">
-                      <label for="lastName">Last Name</label>
-                      <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
-                      <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                          <div *ngIf="lastName.errors.required">Last Name is required</div>
+
+                  <div class="form-group">
+                      <label for="lastName">Date</label>
+                        <div class="input-group">
+                          <input class="form-control" placeholder="yyyy-mm-dd" required date 
+                                 name="dp" [(ngModel)]="model.date" ngbDatepicker #d="ngbDatepicker" #dateValid="ngModel" (click)="d.toggle()" [ngClass]="{ 'is-invalid': f.submitted && dateValid.invalid }">
+                          <!-- <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                          </div> -->
+                          <div *ngIf="f.submitted && dateValid.invalid" class="invalid-feedback">
+                            <div *ngIf="dateValid.errors.required">date is required</div>
+                         </div>
                       </div>
-                  </div> -->
-                  <!-- <div class="form-group">
+                  </div>
+                
+                  <div class="form-group">
                       <label for="email">Email</label>
                       <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
                       <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
                           <div *ngIf="email.errors.required">Email is required</div>
                           <div *ngIf="email.errors.email">Email must be a valid email address</div>
                       </div>
-                  </div> -->
+                  </div>
                   <div class="form-group">
                       <label for="password">Password</label>
                       <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
