@@ -15,7 +15,7 @@
 
                   <div class="form-group">
                     <label for="power">Hero Power</label>
-                    <select class="form-control"  id="power" required [(ngModel)]="model.power" name="power" #power="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" >
+                    <select class="form-control"  id="power" required [(ngModel)]="model.power" name="power" #power="ngModel" [ngClass]="{ 'is-invalid': f.submitted && power.invalid }" >
                       <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
                     </select>
                     <div *ngIf="f.submitted && power.invalid" class="invalid-feedback">
