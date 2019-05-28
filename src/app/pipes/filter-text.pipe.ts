@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterTextPipe implements PipeTransform {
 
   transform(items : any[], searchText: string): any {
-    console.log('sssssssssssssdffff', items, searchText)
     if(!items) return [];
     if(!searchText) return items;   
     // return items.filter( it => { it.login.toLowerCase().includes(searchText) }); // list filtes    
