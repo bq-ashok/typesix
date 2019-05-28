@@ -15,13 +15,16 @@ import { HttpConfigInterceptor } from './interceptor/httpconfig.interceptor';
 import {UserService } from './services/user.service';
 
 import { MouseEventDirective } from './Directives/mouse-event.directive';
+import { FilterTextPipe } from './pipes/filter-text.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserComponent,
-    MouseEventDirective
+    MouseEventDirective,
+    FilterTextPipe
   ],
   imports: [
     BrowserModule,
