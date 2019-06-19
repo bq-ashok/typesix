@@ -17,6 +17,8 @@ import {UserService } from './services/user.service';
 import { MouseEventDirective } from './Directives/mouse-event.directive';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 
+import {CustomLibModule} from 'custom-lib';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    CustomLibModule
   ],
   providers: [
     { provide : HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true},

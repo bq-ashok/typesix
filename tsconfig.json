@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "custom-lib": [
+        "dist/custom-lib"
+      ],
+      "custom-lib/*": [
+        "dist/custom-lib/*"
+      ]
+    }
   }
 }
