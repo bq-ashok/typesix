@@ -2,6 +2,8 @@
     {{index}}. user works! {{data.name}} : {{data.age >= 30 ? data.age : 'false'}} : {{data.car}}
 </p>
 
+<input name="search" [(ngModel)]= "searchText" />
+
 <button (click)="modalOpen()" appMouseEvent highlightColor="green"  class="btn btn-info">Success</button>
 
 <div *ngIf="response">
