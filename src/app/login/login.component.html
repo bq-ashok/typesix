@@ -65,6 +65,12 @@
   </div>
 </div>
 
+<!--lazy loading-->
+   <button class="btn btn-primary" routerLink="/lazy">lazyLoading</button>
+  <!-- loading custom library componets here-->
+  <lib-custom-lib [data]= datas> </lib-custom-lib>
+
+
 <!-- <div *ngFor="let hero of datas; let index = index">
     <app-user [data]="hero" [index]="index"> </app-user>
         <a [routerLink]="['user']" [queryParams]="myObj">My User Object</a> 
