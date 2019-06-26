@@ -18,8 +18,8 @@ import { MouseEventDirective } from './Directives/mouse-event.directive';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 
 import {CustomLibModule} from 'custom-lib';
-
-import {LazymoduleModule} from './lazymodule/lazymodule.module';
+// lazy load
+// import {LazymoduleModule} from './lazymodule/lazymodule.module';
 
 
 
