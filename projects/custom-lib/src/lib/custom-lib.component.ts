@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {CustomLibService} from './custom-lib.service';
 interface dataTypes {
   id: number,
@@ -11,21 +11,23 @@ interface dataTypes {
   selector: 'lib-custom-lib',
   template: `
     <p>
-      custom-lib works!
+      custom-lib works! and data passing from parent application 
     </p>
+    <div class="row"> {{data | json}}</div>
   `,
   styles: []
 })
 export class CustomLibComponent implements OnInit {
-  public values: dataTypes[];
+  public datas: dataTypes[];
+  @Input() data : dataTypes[];
 
   constructor(private libService : CustomLibService) { }
 
   ngOnInit() {
-    this.libService.getData().subscribe( (response : Array<Object>) =>{
-      this.values = response['data'];
-      console.log('values of library', this.values.toString())
-    } )
+    // this.libService.getData().subscribe(datas => {
+    //       console.log('from library', datas);
+    //       this.datas = datas["data"];
+    //     })
   }
 
 }
