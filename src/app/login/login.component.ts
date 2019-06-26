@@ -1,7 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
+import {CustomLibService } from 'custom-lib'
 
-
+interface dataTypes {
+  firstName : string,
+  power : string,
+  date : string
+  email: string,
+  password: string
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,16 +21,14 @@ export class LoginComponent implements OnInit {
   model: object = {};
   datas: object  = [];
   power : any;
-  powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
-  constructor(private router: Router) {
-    this.datas = [
-      { name: 'John', age: 30, car: null },
-      { name: 'ashok', age: 30, car: null },
-      { name: 'kumar', age: 20, car: 'bmw' }
-    ];
-   }
-   
+  powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+
+  constructor(private router: Router, private customLibrary : CustomLibService) {
+    this.customLibrary.getData().subscribe(datas => {
+      console.log('library message called', datas);
+      this.datas = datas;
+    })
+   }  
 
   onSubmit(f) {
     this.submitted = true;
@@ -31,13 +36,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['user'], { queryParams: { page: '55525' }} );
   }
   ngOnInit() {
-    this.model['power'] = 'Super Hot';
-    console.log('init methods get called');
-   
+    this.model['power'] = 'Super Hot';   
   }
 
   changedExtraHandler(changes) {
     console.log(changes);
-}
+  }
 
 }
