@@ -19,6 +19,9 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
 
 import {CustomLibModule} from 'custom-lib';
 
+import {LazymoduleModule} from './lazymodule/lazymodule.module';
+
+
 
 @NgModule({
   declarations: [
