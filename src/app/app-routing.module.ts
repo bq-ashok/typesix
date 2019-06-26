@@ -6,7 +6,8 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'user', component : UserComponent}
+  { path: 'user', component : UserComponent},
+  { path: 'lazy', loadChildren: './lazymodule/lazymodule.module#LazymoduleModule' }
 ];
 
 @NgModule({
